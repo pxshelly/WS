@@ -7,6 +7,15 @@ main {
   display: flex;
   margin: 1rem;
   max-width: 1440px;
+  flex-wrap: nowrap;
+}
+
+h1 {
+  margin: 0 0 15px;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  letter-spacing: 0.025em;
 }
 
 ul {
@@ -20,7 +29,7 @@ ul {
   min-width: 428px;
   max-width: 680px;
   flex: 1.55;
-  margin: 2em;
+  margin: 2rem;
 }
 
 .hero-container img{
@@ -157,5 +166,50 @@ ul {
   top: 20px;
   width: 15px;
   height: 15px;
+  cursor: pointer;
+}
+
+/* Product Details */
+
+.details-container {
+  float: left;
+  flex-basis: 24.75rem;
+  flex: 1;
+  margin: 2rem;
+}
+
+.price {
+  margin-bottom: 2em;
+}
+
+.qa-bubble {
+  height: 1rem;
+}
+
+.have-a-question {
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+
+.sale {
+  text-decoration: line-through;
+}
+
+.sellingDisplayPrice {
+  color: #af1a31;
+  margin-left: 0.5em;
+}
+
+.add-to-cart-button {
+  background-color: #af1a31;
+  border: 1px solid #af1a31;
+  color: #fff;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  width: 320px;
+  height: 40px;
+  position: absolute;
+  top: 600px;
   cursor: pointer;
 }

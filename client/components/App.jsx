@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ProductImages from './ProductImages.jsx';
+import ProductDetails from './ProductDetails.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -92,6 +93,7 @@ class App extends React.Component {
           focusIndex={this.state.focusIndex}
           focusImage={this.state.focusImage}
         />
+        <ProductDetails info={this.state} />
       </main>
     );
   }
