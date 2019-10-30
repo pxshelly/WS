@@ -9,6 +9,10 @@ main {
   max-width: 1440px;
 }
 
+ul {
+  list-style: none;
+}
+
 /* Product Images */
 
 .media-container {
@@ -23,10 +27,6 @@ main {
   width: 100%;
   height: 100%;
   cursor: pointer;
-}
-
-ul {
-  list-style: none;
 }
 
 .callouts {
@@ -63,4 +63,99 @@ ul {
   height: 5.25rem;
   cursor: pointer;
   border: 1px solid #fff;
+}
+
+/* Image Carousel */
+
+.carousel-modal {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.carousel-contents {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  height:650px;
+  width: 800px;
+  position: absolute;
+  z-index: 2;
+  left: 20vw;
+  top: 10vh;
+}
+
+.carousel-contents h3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.025em;
+  margin-left: 1.5em;
+  position: relative;
+  bottom: 2%;
+}
+
+.carousel-hero img {
+  position: relative;
+  bottom: 10vh;
+  left: 16%;
+  height: 550px;
+  width: auto;
+}
+
+.scroll-buttons {
+  z-index: 99;
+  position: relative;
+  width: 37px;
+}
+
+.scroll-button-left {
+  transform: rotate(180deg);
+  top: 30vh;
+  left: 128px;
+  cursor: pointer;
+}
+
+.scroll-button-right {
+  top: -47vh;
+  right: -641px;
+  cursor: pointer;
+}
+
+.image-indicator-container {
+  position: relative;
+  top: -22vh;
+  left: 39%;
+  width: 300px;
+}
+
+.image-indicator-dot-containers {
+  padding: .5rem;
+  display: inline-flex;
+}
+
+.empty-dot {
+  height: .5rem;
+  width: .5rem;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.filled-dot {
+  height: .5rem;
+  width: .5rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.exit-icon {
+  position: relative;
+  left: 760px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }

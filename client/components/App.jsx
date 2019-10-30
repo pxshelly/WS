@@ -15,6 +15,8 @@ class App extends React.Component {
       focusImage: ''
     };
     this.changeHeroImage = this.changeHeroImage.bind(this);
+    this.incrementCarouselImage = this.incrementCarouselImage.bind(this);
+    this.decrementCarouselImage = this.decrementCarouselImage.bind(this);
   }
 
   getProducts() {
@@ -23,6 +25,7 @@ class App extends React.Component {
     axios.get(`/api/products/${id}`)
       .then((result) => {
         const { name, priceRange, price, thumbnail, hero, images } = result.data[0];
+        images.unshift(hero);
         this.setState({
           name: name,
           price: price,
@@ -49,12 +52,43 @@ class App extends React.Component {
     });
   }
 
+  decrementCarouselImage() {
+    if (this.state.focusIndex === 0) {
+      this.setState({
+        focusIndex: this.state.images.length - 1,
+        focusImage: this.state.images[this.state.images.length - 1].href
+      });
+    } else {
+      this.setState({
+        focusIndex: this.state.focusIndex - 1,
+        focusImage: this.state.images[this.state.focusIndex - 1].href
+      });
+    }
+  }
+
+  incrementCarouselImage() {
+    if (this.state.focusIndex === this.state.images.length - 1) {
+      this.setState({
+        focusIndex: 0,
+        focusImage: this.state.images[0].href
+      });
+    } else {
+      this.setState({
+        focusIndex: this.state.focusIndex + 1,
+        focusImage: this.state.images[this.state.focusIndex + 1].href
+      });
+    }
+  }
+
   render() {
     return (
       <main>
         <ProductImages 
           details={this.state} 
           changeHeroImage={this.changeHeroImage}
+          changeCarouselImage={this.changeCarouselImage}
+          incrementCarouselImage={this.incrementCarouselImage}
+          decrementCarouselImage={this.decrementCarouselImage}
           focusIndex={this.state.focusIndex}
           focusImage={this.state.focusImage}
         />
