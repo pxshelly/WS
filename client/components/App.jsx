@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import ProductImages from './ProductImages.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +10,11 @@ class App extends React.Component {
       priceRange: {},
       thumbnail: {},
       hero: '',
-      images: []
+      images: [],
+      focusIndex: 0,
+      focusImage: ''
     };
+    this.changeHeroImage = this.changeHeroImage.bind(this);
   }
 
   getProducts() {
@@ -25,8 +29,10 @@ class App extends React.Component {
           priceRange: priceRange || price,
           thumbnail: thumbnail,
           hero: hero.href,
-          images: images
+          images: images,
+          focusImage: images[0].href
         });
+
       })
       .catch((error) => console.log(error));
   }
@@ -35,10 +41,25 @@ class App extends React.Component {
     this.getProducts();
   }
 
+  changeHeroImage(img, key) {
+    this.setState({
+      hero: img,
+      focusIndex: key,
+      focusImage: img
+    });
+  }
+
   render() {
     return (
-      <main></main>
-    )
+      <main>
+        <ProductImages 
+          details={this.state} 
+          changeHeroImage={this.changeHeroImage}
+          focusIndex={this.state.focusIndex}
+          focusImage={this.state.focusImage}
+        />
+      </main>
+    );
   }
 }
 
