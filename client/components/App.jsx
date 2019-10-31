@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ProductImages from './ProductImages.jsx';
 import ProductDetails from './ProductDetails.jsx';
+import RecentlyViewed from './RecentlyViewed.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -94,6 +95,7 @@ class App extends React.Component {
           focusImage={this.state.focusImage}
         />
         <ProductDetails info={this.state} />
+        <RecentlyViewed />
       </main>
     );
   }
