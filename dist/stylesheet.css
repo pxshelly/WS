@@ -1,3 +1,33 @@
+@media screen and (max-width: 600px) {
+  
+  main {
+    flex-direction: column;
+  }
+
+  .hero-container {
+    position: relative;
+    right: 32px;
+  }
+
+  .gallery {
+    position: relative;
+    right: 32px;
+  }
+
+  .details-container {
+    order: -1;
+  }
+
+  .recently-viewed {
+    display: flex;
+    overflow: scroll;
+  }
+  
+  .recently-viewed img {
+    flex-direction: row;
+  }
+}
+
 body {
   font-family: 'Noto Sans',Arial,sans-serif;
   color: #363636;
@@ -29,7 +59,7 @@ ul {
   min-width: 428px;
   max-width: 680px;
   flex: 1.55;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .hero-container img{
@@ -172,24 +202,16 @@ ul {
 /* Product Details */
 
 .details-container {
-  float: left;
-  flex-basis: 24.75rem;
   flex: 1;
-  margin: 2rem;
+  height: 680px;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.price {
+.details {
   margin-bottom: 2em;
-}
-
-.qa-bubble {
-  height: 1rem;
-}
-
-.have-a-question {
-  padding: 0.5em;
-  text-transform: uppercase;
-  font-size: 0.75em;
 }
 
 .sale {
@@ -209,7 +231,27 @@ ul {
   letter-spacing: 1px;
   width: 320px;
   height: 40px;
-  position: absolute;
-  top: 600px;
   cursor: pointer;
+  justify-content: flex-end;
+}
+
+/* Recently Viewed */
+
+.recently-viewed {
+  width: 160px;
+  margin: 1rem;
+  background-color: #f8f8f8;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+}
+
+.recently-viewed img{
+  width: 90%;
+  padding: 1%;
+}
+
+.recently-viewed h3 {
+  font-size: 1.2em;
 }
