@@ -25,7 +25,7 @@ class ProductImages extends React.Component {
         <li 
           key={i} 
           onClick={() => {this.props.changeHeroImage(image.href, i)}} 
-          className={i === this.props.focusIndex ? 'gallery-active-img' : ''}
+          className={i === this.props.focusIndex ? 'gallery-img gallery-active-img' : 'gallery-img'}
         >
           <img src={image.href}></img>
         </li>

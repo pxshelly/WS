@@ -5,7 +5,7 @@ function ImageCarousel(props) {
     return props.details.images.map((image, i) => {
       return (
         <div key={i} className='image-indicator-dot-containers'>
-          <span className={i === props.focusIndex ? 'filled-dot' : 'empty-dot'}></span>
+          <span className={i === props.focusIndex ? 'dot filled-dot' : 'dot empty-dot'}></span>
         </div>
       );
     });
@@ -34,7 +34,6 @@ function ImageCarousel(props) {
   } else {
     return null;
   }
-  
 }
 
 export default ImageCarousel;

@@ -23,7 +23,7 @@ class App extends React.Component {
   getProducts() {
     const regex = /(?<=products\/).*$/gm;
     let id = window.location.pathname.match(regex)[0];
-    axios.get(`/api/products/${id}`)
+    axios.get(`http://localhost:3000/api/products/${id}`)
       .then((result) => {
         const { name, priceRange, price, thumbnail, hero, images } = result.data[0];
         images.unshift(hero);
@@ -38,7 +38,7 @@ class App extends React.Component {
         });
 
       })
-      .catch((error) => console.log(error));
+      .catch((error) => error);
   }
 
   componentDidMount() {
