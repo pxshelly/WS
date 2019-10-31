@@ -39,15 +39,10 @@ function ProductDetails(props) {
 
   return (
     <div className='details-container'>
-      <h1>{props.info.name}</h1>
-      <div className='price'>
+      <div className='details'>
+        <h1>{props.info.name}</h1>
         <span className={sellingDisplayPrice ? 'sale' : ''}>{regularDisplayPrice}</span>
         <span className='sellingDisplayPrice'>{sellingDisplayPrice}</span>
-      </div>
-      <div className='qa'>
-        <img className='qa-bubble' src='https://www.westelm.com/weimgs/rk/images/i/201934/0004/images/svg/shop-side/we-icon__customer-service.svg' />
-        <span className='have-a-question'>Have a question?</span>
-        <img src='https://www.westelm.com/weimgs/rk/images/i/201934/0004/images/svg/forms/we-icon_select-arrow.svg' />
       </div>
       <button className='add-to-cart-button'>Add To Cart</button>
     </div>
